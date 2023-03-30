@@ -1,40 +1,82 @@
 import React, {useState, useLayoutEffect} from 'react'
 import ProgressBar from "@ramonak/react-progress-bar";
-import Countdown from 'react-countdown';
+import CountDown from '../Components/CountDown';
 import {BiCheckbox,BiCheckSquare} from 'react-icons/bi'
 import questionArray from '../mockApi/HardQuestions';
+import { useNavigate } from 'react-router-dom';
+import Modal from 'react-modal';
 
 function Hard({name}) {
+
+const customStyles = {
+    content: {
+        top: '50%',
+        left: '50%',
+        right: 'auto',
+        bottom: 'auto',
+        marginRight: '-50%',
+        transform: 'translate(-50%, -50%)',
+    },
+    };
+  const navigate = useNavigate()
   const [next, setNext] = useState(0)
   const [total, setTotal] = useState(0)
   const [option, setOption] = useState("")
   const [hidden, setHidden] = useState("hidden")
   const [completed, setCompleted] = useState(10)
+  const [modalIsOpen, setIsOpen] = React.useState(true);
 
   useLayoutEffect(()=>{
     setTimeout(()=>{
+        openModal()
+        navigate('/game')
+    },100000)
+  },[])
+
+
+  const goToNext = () =>{
+    if(next < 10){
         setNext(next+1)
-    },10000)
-  },[next])
-
-  useLayoutEffect(()=>{
-
-  },[next])
+        setHidden("hidden")
+        setOption("")
+        setCompleted(completed+10)
+    }else{
+        openModal()
+    }
+  }
   
   const selectAnswer = (item) =>{
     setOption(prev => item.option)
     setHidden("block")
     if (item.answer === questionArray[next].correctAnswer){
-        setTotal(total+=1)
+        setTotal(total+1)
     }
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+    navigate('/game')
+  }
+
+  function openModal() {
+    setIsOpen(true);
   }
   return (
     <div className='flex flex-col justify-center items-center p-10'>
+        <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        style={customStyles}
+        contentLabel="Example Modal"
+        >
+            <h2>{total > 5 ? `Congratulations ${name}, you passed the quiz with a score of ${total/10}` : `Sorry ${name}, you did not pass the quiz with a score of ${total/10}`}</h2>
+            <p onClick={closeModal} className='text-center text-red-600 cursor-pointer'>close</p>
+        </Modal>
         <div className='w-[60%]'>
             <ProgressBar completed={completed} />
         </div>
         <div className='text-white font-bold text-lg mt-10'>
-            <Countdown date={Date.now() + 10000} />
+            <CountDown time={100000}/>
         </div>
         <div className='mt-8'>
             <h3 className='font-bold text-white'>Question {next}</h3>
@@ -65,6 +107,9 @@ function Hard({name}) {
                 }
             </div>
         </div>
+        <button onClick={goToNext} className="w-[20%] h-24 rounded-full text-white bg-[#cc7272] mt-10 font-bold text-lg">
+            Next
+        </button>
     </div>
   )
 }
