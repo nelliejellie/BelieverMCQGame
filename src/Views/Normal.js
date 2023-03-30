@@ -30,7 +30,7 @@ const customStyles = {
     setTimeout(()=>{
         openModal()
         navigate('/game')
-    },70000)
+    },50000)
   },[])
 
 
@@ -76,7 +76,7 @@ const customStyles = {
             <ProgressBar completed={completed} />
         </div>
         <div className='text-white font-bold text-lg mt-10'>
-            <CountDown time={70000}/>
+            <CountDown time={50000}/>
         </div>
         <div className='mt-8'>
             <h3 className='font-bold text-white'>Question {next}</h3>
