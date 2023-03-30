@@ -2,10 +2,15 @@ import React from 'react'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Bars } from  'react-loader-spinner'
+import useSound from 'use-sound';
+import success from '../assets/success.mp3'
 
 function Login({name, setName}) {
   const [Loading, setLoading] = useState(false)
   const navigate = useNavigate();
+  const [play] = useSound(success)
+
+
   const login = () =>{
     if(name === ""){
         alert("please enter a valid name")
@@ -27,7 +32,7 @@ function Login({name, setName}) {
             value={name}
             className='pl-4 w-[20%] h-[52px]'
         />
-        <button onClick={login} className="bg-green-500 w-[15%] h-[52px] mt-4 rounded-lg">
+        <button onClick={login} onMouseUp={play} className="bg-green-500 w-[15%] h-[52px] mt-4 rounded-lg">
             Login
         </button>
         {
