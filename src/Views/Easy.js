@@ -55,6 +55,7 @@ const customStyles = {
 
   function closeModal() {
     setIsOpen(false);
+    navigate('/game')
   }
 
   function openModal() {
