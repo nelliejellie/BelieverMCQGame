@@ -108,7 +108,7 @@ function Game({name}) {
                         </div>
                         
                     }
-                    <p className='text-white'>Normal</p>
+                    <p className='text-white'>Medium</p>
                 </div>
                 <div className='flex flex-row items-center text-[20px] text-white space-x-4'>
                     {

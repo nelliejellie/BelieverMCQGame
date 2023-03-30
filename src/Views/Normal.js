@@ -19,11 +19,12 @@ const customStyles = {
     },
     };
   const navigate = useNavigate()
-  const [next, setNext] = useState(0)
+  const [next, setNext] = useState(Math.floor((Math.random() * 9)))
   const [total, setTotal] = useState(0)
   const [option, setOption] = useState("")
   const [hidden, setHidden] = useState("hidden")
   const [completed, setCompleted] = useState(10)
+  const [countQuestions, setCountQuestions] = useState(0)
   const [modalIsOpen, setIsOpen] = React.useState(false);
 
   useLayoutEffect(()=>{
@@ -35,8 +36,9 @@ const customStyles = {
 
 
   const goToNext = () =>{
-    if(next < 9){
-        setNext(next+1)
+    setCountQuestions(prev => prev+1)
+    if(countQuestions < 9){
+        setNext(Math.floor((Math.random() * 8)+1))
         setHidden("hidden")
         setOption("")
         setCompleted(completed+10)
@@ -75,7 +77,7 @@ const customStyles = {
         <div className='w-[60%]'>
             <ProgressBar completed={completed} />
         </div>
-        <div className='text-white font-bold text-lg mt-10'>
+        <div className='text-white font-bold text-2xl mt-10'>
             <CountDown time={50000}/>
         </div>
         <div className='mt-8'>
