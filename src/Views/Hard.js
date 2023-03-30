@@ -17,25 +17,25 @@ const customStyles = {
         marginRight: '-50%',
         transform: 'translate(-50%, -50%)',
     },
-    };
+};
   const navigate = useNavigate()
   const [next, setNext] = useState(0)
   const [total, setTotal] = useState(0)
   const [option, setOption] = useState("")
   const [hidden, setHidden] = useState("hidden")
   const [completed, setCompleted] = useState(10)
-  const [modalIsOpen, setIsOpen] = React.useState(true);
+  const [modalIsOpen, setIsOpen] = React.useState(false);
 
   useLayoutEffect(()=>{
     setTimeout(()=>{
-        openModal()
+        setIsOpen(true)
         navigate('/game')
     },30000)
   },[])
 
 
   const goToNext = () =>{
-    if(next < 10){
+    if(next < 9){
         setNext(next+1)
         setHidden("hidden")
         setOption("")
@@ -64,12 +64,12 @@ const customStyles = {
   return (
     <div className='flex flex-col justify-center items-center p-10'>
         <Modal
-        isOpen={modalIsOpen}
-        onRequestClose={closeModal}
-        style={customStyles}
-        contentLabel="Example Modal"
+            isOpen={modalIsOpen}
+            onRequestClose={closeModal}
+            style={customStyles}
+            contentLabel="Example Modal"
         >
-            <h2>{total > 5 ? `Congratulations ${name}, you passed the quiz with a score of ${total/10}` : `Sorry ${name}, you did not pass the quiz with a score of ${total/10}`}</h2>
+            <h2>{total > 5 ? `Congratulations ${name}, you passed the quiz with a score of ${total}/10` : `Sorry ${name}, you did not pass the quiz with a score of ${total}/10`}</h2>
             <p onClick={closeModal} className='text-center text-red-600 cursor-pointer'>close</p>
         </Modal>
         <div className='w-[60%]'>

@@ -35,7 +35,7 @@ const customStyles = {
 
 
   const goToNext = () =>{
-    if(next < 10){
+    if(next < 9){
         setNext(next+1)
         setHidden("hidden")
         setOption("")
