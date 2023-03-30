@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import { Bars } from  'react-loader-spinner'
 import useSound from 'use-sound';
 import success from '../assets/success.mp3'
+import 'animate.css';
 
 function Login({name, setName}) {
   const [Loading, setLoading] = useState(false)
@@ -24,7 +25,7 @@ function Login({name, setName}) {
   }
   return (
     <div className='flex flex-col justify-center items-center h-[100vh]'>
-        <h2 className='text-white text-[50px] uppercase'>Please enter your name to login</h2>
+        <h2 className='text-white text-[50px] uppercase animate__animated animate__bounce'>Please enter your name to login</h2>
         <input 
             onChange={(e)=>{
                 setName(e.target.value)

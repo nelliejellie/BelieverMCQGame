@@ -2,6 +2,7 @@ import React, {useLayoutEffect
 } from 'react'
 import { Bars } from  'react-loader-spinner'
 import { useNavigate } from "react-router-dom";
+import 'animate.css';
 
 function Startup() {
   const navigate = useNavigate();
@@ -12,7 +13,7 @@ function Startup() {
   },[navigate])
   return (
     <div className='flex flex-col justify-center items-center h-[100vh]'>
-        <p className='text-white font-bold text-[50px]'>
+        <p className='text-white font-bold text-[50px] animate__animated animate__tada'>
             Welcome To Believers Quiz Game
         </p>
         <Bars
