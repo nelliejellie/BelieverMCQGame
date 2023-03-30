@@ -81,7 +81,7 @@ const customStyles = {
             <CountDown time={50000}/>
         </div>
         <div className='mt-8'>
-            <h3 className='font-bold text-white'>Question {next}</h3>
+            <h3 className='font-bold text-white'>Question {countQuestions}</h3>
         </div>
         <div className='text-white'>
             <div className='text-[40px] font-bold'>
