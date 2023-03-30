@@ -33,15 +33,16 @@ const customStyles = {
   useLayoutEffect(()=>{
     setTimeout(()=>{
         setIsOpen(true)
-        navigate('/game')
     },30000)
   },[navigate])
 
 
   const goToNext = () =>{
     setCountQuestions(prev => prev+1)
-    if(countQuestions < 9){
-        setNext(Math.floor((Math.random() * 10)))
+    if(option === ""){
+        alert("please select an answer")
+    }else if(countQuestions < 9){
+        setNext(Math.floor((Math.random() * 8)+1))
         setHidden("hidden")
         setOption("")
         setCompleted(completed+10)

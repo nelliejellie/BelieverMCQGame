@@ -33,14 +33,15 @@ const customStyles = {
   useLayoutEffect(()=>{
     setTimeout(()=>{
         openModal()
-        navigate('/game')
     },70000)
   },[navigate])
 
 
   const goToNext = () =>{
     setCountQuestions(prev => prev+1)
-    if(countQuestions < 9){
+    if(option === ""){
+        alert("please select an answer")
+    }else if(countQuestions < 9){
         setNext(Math.floor((Math.random() * 8)+1))
         setHidden("hidden")
         setOption("")
