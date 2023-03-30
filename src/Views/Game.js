@@ -3,6 +3,8 @@ import {BiCheckbox,BiCheckSquare} from 'react-icons/bi'
 import { Bars } from  'react-loader-spinner'
 import { useNavigate } from 'react-router-dom'
 import Modal from 'react-modal';
+import useSound from 'use-sound';
+import start from '../assets/start.mp3'
 
 function Game({name}) {
     const customStyles = {
@@ -19,6 +21,7 @@ function Game({name}) {
   const [checkeasy, setCheckEasy] = useState(false)
   const [checknormal, setCheckNormal] = useState(false)
   const [modalIsOpen, setIsOpen] = React.useState(true);
+  const [play] = useSound(start);
   const navigate = useNavigate()
 
   const handleHard = () =>{
@@ -71,7 +74,7 @@ function Game({name}) {
                     
                     {
                         checkhard === false?
-                        <BiCheckbox onClick={handleHard}/>
+                        <BiCheckbox onClick={handleHard} onMouseUp={play}/>
                         :
                         <div className='flex flex-row'>
                             <BiCheckSquare />
@@ -92,7 +95,7 @@ function Game({name}) {
                 <div className='flex flex-row items-center text-[20px] text-white space-x-4'>
                     {
                         checknormal === false?
-                        <BiCheckbox onClick={handleNormal}/>
+                        <BiCheckbox onClick={handleNormal} onMouseUp={play}/>
                         :
                         <div className='flex flex-row'>
                             <BiCheckSquare />
@@ -113,7 +116,7 @@ function Game({name}) {
                 <div className='flex flex-row items-center text-[20px] text-white space-x-4'>
                     {
                         checkeasy === false?
-                        <BiCheckbox onClick={handleEasy}/>
+                        <BiCheckbox onClick={handleEasy} onMouseUp={play}/>
                         :
                         <div className='flex flex-row'>
                             <BiCheckSquare />

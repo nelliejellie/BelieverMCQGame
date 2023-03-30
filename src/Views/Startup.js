@@ -1,4 +1,4 @@
-import React, {useState, useLayoutEffect
+import React, {useLayoutEffect
 } from 'react'
 import { Bars } from  'react-loader-spinner'
 import { useNavigate } from "react-router-dom";
@@ -9,7 +9,7 @@ function Startup() {
     setTimeout(()=>{
         navigate('Login')
     },3000)
-  },[])
+  },[navigate])
   return (
     <div className='flex flex-col justify-center items-center h-[100vh]'>
         <p className='text-white font-bold text-[50px]'>

@@ -1,6 +1,6 @@
 import React from 'react'
 import Countdown from 'react-countdown';
-import { memo, useLayoutEffect } from "react";
+import { memo} from "react";
 
 function CountDown({time}) {
 

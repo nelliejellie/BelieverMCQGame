@@ -5,6 +5,8 @@ import {BiCheckbox,BiCheckSquare} from 'react-icons/bi'
 import questionArray from '../mockApi/HardQuestions';
 import { useNavigate } from 'react-router-dom';
 import Modal from 'react-modal';
+import useSound from 'use-sound';
+import beep from '../assets/beep.mp3'
 
 function Normal({name}) {
 
@@ -26,13 +28,14 @@ const customStyles = {
   const [completed, setCompleted] = useState(10)
   const [countQuestions, setCountQuestions] = useState(0)
   const [modalIsOpen, setIsOpen] = React.useState(false);
+  const [play] = useSound(beep)
 
   useLayoutEffect(()=>{
     setTimeout(()=>{
         openModal()
         navigate('/game')
     },50000)
-  },[])
+  },[navigate])
 
 
   const goToNext = () =>{
@@ -90,7 +93,7 @@ const customStyles = {
             <div>
                 {
                     questionArray[next].options.map(item => (
-                        <div key={item.answer} className='flex flex-row items-center space-x-5' onClick={()=>{selectAnswer(item)}}>
+                        <div key={item.answer} className='flex flex-row items-center space-x-5' onClick={()=>{selectAnswer(item)}} onMouseUp={play}>
                             {
                                 option === item.option ?
                                 <BiCheckSquare />

@@ -1,7 +1,6 @@
-import logo from './logo.svg';
 import './App.css';
-import { createBrowserRouter, createRoutesFromElements, Route, Link, Outlet, RouterProvider, Router } from 'react-router-dom';
-import { useState, createContext } from "react";
+import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider} from 'react-router-dom';
+import { useState} from "react";
 import Startup from './Views/Startup';
 import Login from './Views/Login';
 import Game from './Views/Game';
