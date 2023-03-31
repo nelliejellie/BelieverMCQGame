@@ -218,6 +218,160 @@ const questionArray = [
             },
         ],
         correctAnswer: "The internal storage of the component"
+    },
+    {
+        question: "Which of the following is not a disadvantage of React.js?",
+        options:[
+            {
+                option:"option1",
+                answer:"React.js has only a view layer. We have put your code for Ajax requests, events and so on"
+            },
+            {
+                option:"option2",
+                answer:"The library of React.js is pretty large"
+            },
+            {
+                option:"option3",
+                answer:"The JSX in React.js makes code easy to read and write."
+            },
+            {
+                option:"option4",
+                answer:"The learning curve can be steep in React.js."
+            },
+        ],
+        correctAnswer: "The learning curve can be steep in React.js."
+    },
+    {
+        question: "What are the two ways to handle data in React?",
+        options:[
+            {
+                option:"option1",
+                answer:"State & Component."
+            },
+            {
+                option:"option2",
+                answer:"State & Services"
+            },
+            {
+                option:"option3",
+                answer:"State & Props"
+            },
+            {
+                option:"option4",
+                answer:"None of the above."
+            },
+        ],
+        correctAnswer: "State & Props"
+    },
+    {
+        question: "Which of the following is a must API for every React.js component?",
+        options:[
+            {
+                option:"option1",
+                answer:"SetinitialComponent"
+            },
+            {
+                option:"option2",
+                answer:"renderComponent"
+            },
+            {
+                option:"option3",
+                answer:"render"
+            },
+            {
+                option:"option4",
+                answer:"All of the above"
+            },
+        ],
+        correctAnswer: "renderComponent"
+    },
+    {
+        question: "Does React.js create a VIRTUAL DOM in the memory?",
+        options:[
+            {
+                option:"option1",
+                answer:"TRUE"
+            },
+            {
+                option:"option2",
+                answer:"FALSE"
+            },
+            {
+                option:"option3",
+                answer:"Can be true or false"
+            },
+            {
+                option:"option4",
+                answer:"Cannot say"
+            },
+        ],
+        correctAnswer: "Cannot say"
+    },
+    {
+        question: "What does ES6 stand for?",
+        options:[
+            {
+                option:"option1",
+                answer:"ECMAScript 6"
+            },
+            {
+                option:"option2",
+                answer:"ECMA 6"
+            },
+            {
+                option:"option3",
+                answer:"ECMAJavaScript 6"
+            },
+            {
+                option:"option4",
+                answer:"EJavaScript 6"
+            },
+        ],
+        correctAnswer: "ECMAScript 6"
+    },
+    {
+        question: "Which of the following method refers to the parent class in React.js?",
+        options:[
+            {
+                option:"option1",
+                answer:"inherits()"
+            },
+            {
+                option:"option2",
+                answer:"self()"
+            },
+            {
+                option:"option3",
+                answer:"super()"
+            },
+            {
+                option:"option4",
+                answer:"this()"
+            },
+        ],
+        correctAnswer: "super()"
+    },
+    {
+        question: "Which of the following best defines the 'key' prop?",
+        options:[
+            {
+                option:"option1",
+                answer:"'Key' prop is used to look pretty, and there is no benefit whatsoever."
+            },
+            {
+                option:"option2",
+                answer:"'Key' prop is a way for React to identify a newly added item in a list and compare it during the 'diffing' algorithm."
+            },
+            {
+                option:"option3",
+                answer:"It is one of the attributes in HTML."
+            },
+            {
+                option:"option4",
+                answer:"It is NOT commonly used in an array."
+            },
+        ],
+        correctAnswer: "'Key' prop is used to look pretty, and there is no benefit whatsoever."
     }
 ] 
 

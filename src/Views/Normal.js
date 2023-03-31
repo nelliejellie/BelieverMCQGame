@@ -21,7 +21,7 @@ const customStyles = {
     },
     };
   const navigate = useNavigate()
-  const [next, setNext] = useState(Math.floor((Math.random() * 9)))
+  const [next, setNext] = useState(Math.floor((Math.random() * 15)))
   const [total, setTotal] = useState(0)
   const [option, setOption] = useState("")
   const [hidden, setHidden] = useState("hidden")
@@ -42,7 +42,7 @@ const customStyles = {
     if(option === ""){
         alert("please select an answer")
     }else if(countQuestions < 9){
-        setNext(Math.floor((Math.random() * 8)+1))
+        setNext(Math.floor((Math.random() * 15)+1))
         setHidden("hidden")
         setOption("")
         setCompleted(completed+10)
